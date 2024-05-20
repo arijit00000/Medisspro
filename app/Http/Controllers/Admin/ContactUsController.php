@@ -9,7 +9,7 @@ use App\Models\Settings\ContactUs\ContactUS;
 class ContactUsController extends Controller
 {
     public function show(){
-        $Contact = ContactUs::paginate(1);
+        $Contact = ContactUs::with('addServiceCard')->paginate(1);
         return view('admin.contact-us',compact('Contact'));
     }
 }

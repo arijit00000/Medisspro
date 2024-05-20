@@ -20,7 +20,11 @@
                         <td>{{$con->f_name}} {{$con->l_name}}</td>
                         <td>{{$con->email}}</td>
                         <td>{{$con->mobile}}</td>
-                        <td></td>
+                        @if(isset($con->addServiceCard))
+                            <td>{{$con->addServiceCard->headline}}</td>
+                        @else
+                            <td></td>
+                        @endif
                         <td>{{$con->inquire}}</td>
                     </tr>
                     @endforeach
