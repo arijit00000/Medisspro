@@ -237,7 +237,7 @@
                                 <a href="{{route('settings.home')}}">Home Page</a>
                             </li>
                             <li>
-                                <a href="{{route('settings.home')}}">Pending Page</a>
+                                <a href="{{route('settings.contact')}}">Contact Page</a>
                             </li>
                         </ul>
                     </li>

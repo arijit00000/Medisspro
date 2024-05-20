@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Settings\HomeController;
+use App\Http\Controllers\Admin\Settings\ContactController;
 use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Frontend\FrontendHomeController;
 use App\Http\Controllers\Frontend\FrontendContactController;
@@ -60,6 +61,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/settings/home/testimonial/headline/submit', [HomeController::class, 'testimonialheadlinesubmit'])->name('testimonial.headline.submit');
     Route::post('/admin/settings/home/gallaryheadline/submit', [HomeController::class, 'gallaryheadlinesubmit'])->name('gallary.headline.submit');
     Route::post('/admin/settings/home/gallary/submit', [HomeController::class, 'gallarysubmit'])->name('gallary.submit');
+
+    // Settings Contact Routes
+    Route::get('/admin/settings/contact', [ContactController::class, 'home'])->name('settings.contact');
+    Route::post('/admin/settings/contact/heading/submit', [ContactController::class, 'heading'])->name('settings.contact.heading');
+    Route::post('/admin/settings/contact/context/submit', [ContactController::class, 'context'])->name('settings.contact.context');
 });
 
 

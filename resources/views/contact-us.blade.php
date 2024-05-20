@@ -12,8 +12,12 @@
 <!--top banner-->
 <section class="top-banner">
     <div class="top-banner-text">
-        <h1 class="h2">Contact Us</h1>
-        <p>The generated Lorem Ipsum is therefore always free from repetition.</p>
+        @if(isset($headline))
+        @foreach($headline as $head)
+            <h1 class="h2">{{$head->headline}}</h1>
+            <p>{{$head->subheadline}}</p>
+        @endforeach
+        @endif
     </div>
     <div class="bg-shape mb-0">
         <img src="{{asset('asset/image/img/bg-03.svg')}}" alt="bg-2">
@@ -26,8 +30,12 @@
         <div class="row">
             <div class="col-md-5" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
                 <div class="my-heading">
-                    <h2 class="h1">Contact Details</h2>
-                    <p>All the Lorem Ipsum generators on the Internet tend to repeat predefined chunks as necessary, the true generator on the Internet.</p>
+                    @if(isset($context))
+                    @foreach($context as $con)
+                        <h2 class="h1">{{$con->headline}}</h2>
+                        <p>{{$con->subheadline}}</p>
+                    @endforeach
+                    @endif
                 </div>
                 <ul class="my-ul">
                     <li class="my-li" data-aos="fade-up" data-aos-duration="2000">

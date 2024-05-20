@@ -6,13 +6,18 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Settings\ContactUs\ContactUs;
 use App\Models\Settings\Home\SettingsHomeHeaderFooter;
+use App\Models\Settings\ContactUS\SettingsContactHeadline;
+use App\Models\Settings\ContactUS\SettingsContactContext;
 
 class FrontendContactController extends Controller
 {
     public function contactUs(Request $request) {
 
         $data = SettingsHomeHeaderFooter::where('id','1')->get();
-        return view('contact-us',compact('data'));
+        $headline = SettingsContactHeadline::where('id','1')->get();
+        $context = SettingsContactContext::where('id','1')->get();
+
+        return view('contact-us',compact('data','headline','context'));
     }
 
     public function contactSubmit(Request $request){
