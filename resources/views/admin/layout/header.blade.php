@@ -237,6 +237,9 @@
                                 <a href="{{route('settings.home')}}">Home Page</a>
                             </li>
                             <li>
+                                <a href="{{route('settings.home')}}">About Us</a>
+                            </li>
+                            <li>
                                 <a href="{{route('settings.contact')}}">Contact Page</a>
                             </li>
                         </ul>

@@ -8095,3 +8095,25 @@ button.close {
     height: 40px;
     width: 40px;
 }
+
+.page-link{
+   background-color: #fff !important;
+   color: #030993 !important;
+   border-color: #030993 !important;
+}
+
+.table-bordered {
+   margin-top: 6px !important;
+}
+
+.pagination{
+    margin: 0 0 !important;
+}
+
+.nodata{
+    height: 20px;
+    width: 100%;
+    margin-top: 6px;
+    border: #030993 1px solid;
+    text-align: center;
+}

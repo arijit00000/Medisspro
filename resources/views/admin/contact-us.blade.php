@@ -3,8 +3,8 @@
 
 <div class="container">
     <div class="row">
+        @if(isset($Contact) && $Contact->count() > 0)
         <table class="table table-bordered">
-            @if(isset($Contact) && $Contact->count() > 0)
             <thead>
                 <tr>
                     <th scope="col">Name</th>
@@ -28,14 +28,39 @@
                         <td>{{$con->inquire}}</td>
                     </tr>
                     @endforeach
-                    {{$Contact->links()}}
-                @else
-                    <tr>
-                        <td colspan="5" class="text-center">No Data Avaliable</td>
-                    </tr>
             </tbody>
-            @endif
         </table>
+        <div>
+            <p>showing <b>{{$Contact->count()}}</b> out of <b>{{$Contact->total()}}</b></p>
+        </div>
+        <div class="mt-3">
+            <ul class="pagination">
+                @if ($Contact->onFirstPage())
+                    <li class="page-item disabled"><span class="page-link">&laquo;</span></li>
+                @else
+                    <li class="page-item"><a class="page-link" href="{{ $Contact->previousPageUrl() }}" rel="prev">&laquo;</a></li>
+                @endif
+
+                @foreach ($Contact->getUrlRange(1, $Contact->lastPage()) as $page => $url)
+                    @if ($page == $Contact->currentPage())
+                        <li class="page-item active"><span class="page-link">{{ $page }}</span></li>
+                    @else
+                        <li class="page-item"><a class="page-link" href="{{ $url }}">{{ $page }}</a></li>
+                    @endif
+                @endforeach
+
+                @if ($Contact->hasMorePages())
+                    <li class="page-item"><a class="page-link" href="{{ $Contact->nextPageUrl() }}" rel="next">&raquo;</a></li>
+                @else
+                    <li class="page-item disabled"><span class="page-link">&raquo;</span></li>
+                @endif
+            </ul>
+        </div>
+        @else
+        <div class="nodata">
+            No Data Avaliable
+        </div>
+        @endif
     </div>
 </div>
 
