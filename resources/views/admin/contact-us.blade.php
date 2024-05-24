@@ -3,6 +3,15 @@
 
 <div class="container">
     <div class="row">
+        <div style="margin-top: 8px;">
+            <form action="{{route('admin.contact')}}" method="GET">
+                <div class="form-group search-div">
+                    <input style="search-input" type="text" class="form-control" placeholder="Search" name="search" value="{{$search}}">
+                    <button class="search-btn" type="submit">Search</button>
+                    <button class="search-btn"><a href="{{route('admin.contact')}}">Clear</a></button>
+                </div>
+            </form>
+        </div>
         @if(isset($Contact) && $Contact->count() > 0)
         <table class="table table-bordered">
             <thead>
