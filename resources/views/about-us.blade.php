@@ -1,3 +1,4 @@
+@include('layouts.header')
 <!--top banner-->
 <section class="top-banner">
     <div class="top-banner-text">
@@ -215,4 +216,5 @@
     </section>
 </section>
 <!--why section end-->
+@include('layouts.footer')
 

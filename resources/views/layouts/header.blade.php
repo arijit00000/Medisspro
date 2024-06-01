@@ -61,7 +61,7 @@
                             <a class="nav-link" href="{{route('homepage')}}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">About us</a>
+                            <a class="nav-link" href="{{route('about.us')}}">About us</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Services</a>
@@ -70,7 +70,7 @@
                             <a class="nav-link" href="#">Products</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Gallery</a>
+                            <a class="nav-link" href="{{route('gallary')}}">Gallery</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">Blog</a>

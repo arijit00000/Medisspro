@@ -5,9 +5,13 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Settings\HomeController;
 use App\Http\Controllers\Admin\Settings\ContactController;
 use App\Http\Controllers\Admin\Settings\HeaderFooterController;
-use App\Http\Controllers\Frontend\FrontendHomeController;
-use App\Http\Controllers\Frontend\FrontendContactController;
 use App\Http\Controllers\Admin\ContactUsController;
+
+use App\Http\Controllers\Frontend\FrontendHomeController;
+use App\Http\Controllers\Frontend\FrontendAboutController;
+use App\Http\Controllers\Frontend\FrontendContactController;
+use App\Http\Controllers\Frontend\FrontendGallaryController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,14 +26,18 @@ use Illuminate\Support\Facades\Route;
 */
 
 // Web Site Routes
+// Home Page
 Route::get('/header', [FrontendHeaderFooterController::class, 'header']);
 Route::get('/footer', [FrontendHeaderFooterController::class, 'footer']);
 Route::get('/', [FrontendHomeController::class, 'homepage'])->name('homepage');
 Route::post('/enquire-submit', [FrontendHomeController::class, 'enquiresubmit'])->name('enquire.submit');
-
+// About Us Page
+Route::get('/about-us', [FrontendAboutController::class, 'aboutUs'])->name('about.us');
+// Contact Us Page
 Route::get('/contact-us', [FrontendContactController::class, 'contactUs'])->name('contact.us');
 Route::post('/contact-us/submit', [FrontendContactController::class, 'contactSubmit'])->name('contact.submit');
-
+// Gallary Page
+Route::get('/gallary', [FrontendGallaryController::class, 'gallary'])->name('gallary');
 
 // Admin Route
 Route::get('/admin', function(){return view('admin.login');})->name('admin.login');
