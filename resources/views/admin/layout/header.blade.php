@@ -183,9 +183,9 @@
                     <li>
                         <a href="{{route('dashboard')}}"><i class="fa fa-fw fa-dashboard"></i> Dashboard</a>
                     </li>
-                    <li>
+                    <!-- <li>
                         <a href="charts.html"><i class="fa fa-fw fa-header"></i> Header</a>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a href="tables.html"><i class="fa fa-fw fa-table"></i> Tables</a>
                     </li>
@@ -198,7 +198,7 @@
                     <li>
                         <a href="bootstrap-grid.html"><i class="fa fa-fw fa-wrench"></i> Bootstrap Grid</a>
                     </li> -->
-                    <li>
+                    <!-- <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#home_section"><i
                                 class="fa fa-fw fa-home"></i> Home Page <i class="fa fa-fw fa-caret-down"></i></a>
                         <ul id="home_section" class="collapse">
@@ -221,29 +221,32 @@
                                 <a href="#">Dropdown Item</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="{{route('admin.contact')}}"><i class="fa fa-address-book"></i> Contact Us</a>
                     </li>
-
                     <li>
+                        <a href="{{route('temprary.show')}}"><i class="fa fa-address-book"></i> Service Request</a>
+                    </li>
+
+                    <!-- <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#settings"><i
                                 class="fa fa-cog"></i> Settings <i class="fa fa-caret-down"></i></a>
                         <ul id="settings" class="collapse">
                             <li>
-                                <a href="{{route('settings.homeheader')}}">Header Footer</a>
+                                <a href="#">Header Footer</a>
                             </li>
                             <li>
-                                <a href="{{route('settings.home')}}">Home Page</a>
+                                <a href="#">Home Page</a>
                             </li>
                             <li>
-                                <a href="{{route('settings.home')}}">About Us</a>
+                                <a href="#">About Us</a>
                             </li>
                             <li>
-                                <a href="{{route('settings.contact')}}">Contact Page</a>
+                                <a href="#">Contact Page</a>
                             </li>
                         </ul>
-                    </li>
+                    </li> -->
                     <!-- <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li> -->

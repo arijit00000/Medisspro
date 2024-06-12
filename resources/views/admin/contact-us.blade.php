@@ -19,7 +19,7 @@
                     <th scope="col">Name</th>
                     <th scope="col">Email</th>
                     <th scope="col">Mobile</th>
-                    <th scope="col">Service Headline</th>
+                    <!-- <th scope="col">Service Headline</th> -->
                     <th scope="col">Inquire</th>
                 </tr>
             </thead>
@@ -29,11 +29,11 @@
                         <td>{{$con->f_name}} {{$con->l_name}}</td>
                         <td>{{$con->email}}</td>
                         <td>{{$con->mobile}}</td>
-                        @if(isset($con->addServiceCard))
+                        <!-- @if(isset($con->addServiceCard))
                             <td>{{$con->addServiceCard->headline}}</td>
                         @else
                             <td></td>
-                        @endif
+                        @endif -->
                         <td>{{$con->inquire}}</td>
                     </tr>
                     @endforeach

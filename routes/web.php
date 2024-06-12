@@ -5,7 +5,10 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 // use App\Http\Controllers\Admin\Settings\HomeController;
 // use App\Http\Controllers\Admin\Settings\ContactController;
 // use App\Http\Controllers\Admin\Settings\HeaderFooterController;
-// use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\ContactUsController;
+
+// Temporary
+use App\Http\Controllers\TemporayController;
 
 // use App\Http\Controllers\Frontend\FrontendHomeController;
 // use App\Http\Controllers\Frontend\FrontendAboutController;
@@ -51,19 +54,21 @@ use Illuminate\Support\Facades\Route;
 // Route::get('/gallary', [FrontendGallaryController::class, 'gallary'])->name('gallary');
 
 // Admin Route
-// Route::get('/admin', function(){return view('admin.login');})->name('admin.login');
-
+Route::get('/admin', function(){return view('admin.login');})->name('admin.login');
 
 // Route::get('/dashboard', function () {return view('dashboard');})->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    // Route::get('/dashboard', function(){return view('admin.dashboard');})->name('dashboard');
+    Route::get('/dashboard', function(){return view('admin.dashboard');})->name('dashboard');
     // Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     // Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     // Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 
     // Contact Route
-    // Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
+    Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
+
+    // Temprary Route
+    Route::get('/admin/service', [TemporayController::class, 'show'])->name('temprary.show');
 
     // Settings Home Routes
     // Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
@@ -95,11 +100,14 @@ require __DIR__.'/auth.php';
 Route::get('/head', [LayoutsController::class, 'header']);
 Route::get('/foot', [LayoutsController::class, 'footer']);
 Route::get('/', [HomeController::class, 'home'])->name('home.page');
+Route::post('/home/services/submit', [HomeController::class, 'querySubmit'])->name('home.submit');
 Route::get('/about-us', [AboutusController::class, 'about'])->name('aboutus.page');
 Route::get('/services', [ServicesController::class, 'service'])->name('service.page');
+Route::post('/services/submit', [ServicesController::class, 'querySubmit'])->name('query.submit');
 Route::get('/products', [ProductController::class, 'product'])->name('product.page');
 Route::get('/distributor', [DistributorController::class, 'distributor'])->name('distributor.page');
 Route::get('/gallay', [GallaryController::class, 'gallary'])->name('gallary.page');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog.page');
 Route::get('/career', [CareerController::class, 'career'])->name('career.page');
 Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact.page');
+Route::post('/contact-us/submit', [ContactController::class, 'contactSubmit'])->name('contact.submit');

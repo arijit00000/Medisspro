@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Settings\ContactUs\ContactUS;
-use App\Models\Settings\Home\SettingsHomeServiceCard;
+// use App\Models\Settings\Home\SettingsHomeServiceCard;
 
 class ContactUsController extends Controller
 {
@@ -18,9 +18,9 @@ class ContactUsController extends Controller
                                     ->orwhere('f_name','LIKE', '%' .$search. '%')
                                     ->orwhere('l_name','LIKE', '%' .$search. '%')
                                     ->orwhere('mobile','LIKE', '%' .$search. '%')
-                                    ->orWhereHas('addServiceCard', function($query) use ($search) {
-                                        $query->where('headline', 'LIKE', '%' . $search . '%');
-                                    })
+                                    // ->orWhereHas('addServiceCard', function($query) use ($search) {
+                                    //     $query->where('headline', 'LIKE', '%' . $search . '%');
+                                    // })
                                     ->orderBy('created_at','DESC')
                                     ->paginate(30)
                                     ->withQueryString();
@@ -29,7 +29,7 @@ class ContactUsController extends Controller
             return view('admin.contact-us',compact('Contact','search'));
         }
         else{
-        $Contact = ContactUs::with('addServiceCard')->orderBy('created_at','DESC')->paginate(30);
+        $Contact = ContactUs::orderBy('created_at','DESC')->paginate(30);
         return view('admin.contact-us',compact('Contact','search'));
         }
     }
