@@ -223,6 +223,9 @@
                         </ul>
                     </li> -->
                     <li>
+                        <a href="{{route('admin.distributor')}}"><i class="fa fa-address-book"></i> Distributor Contact</a>
+                    </li>
+                    <li>
                         <a href="{{route('admin.contact')}}"><i class="fa fa-address-book"></i> Contact Us</a>
                     </li>
                     <li>

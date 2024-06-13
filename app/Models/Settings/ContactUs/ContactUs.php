@@ -21,6 +21,7 @@ class ContactUs extends Model
         'email',
         'mobile',
         'inquire',
+        'form_type',
         's_card_id'
     ];
 

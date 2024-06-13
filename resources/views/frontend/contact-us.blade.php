@@ -76,6 +76,7 @@
                         <div class="form-group">
                             <textarea class="form-control msg" placeholder="Write Your Inquiry" rows="6" id="inquiry" name="inquiry"></textarea>
                         </div>
+                        <input type="hidden" value="contact" name="type">
                         <button type="button" class="btn my-btn" onclick="submitContactUs()">send</button>
                     </form>
                     <output id="output"></output>

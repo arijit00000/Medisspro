@@ -25,9 +25,10 @@ class ContactController extends Controller
             "l_name" => $request->input('l_name'),
             "email" => $request->input('email'),
             "mobile" => $request->input('phone'),
-            "inquire" => $request->input('inquiry')
+            "inquire" => $request->input('inquiry'),
+            "form_type" => $request->input('type')
         ];
-
+        
         ContactUs::create($insertdata);
 
         return response()->json(['success'=>true]);

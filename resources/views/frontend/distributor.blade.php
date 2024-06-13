@@ -4,7 +4,7 @@
 <section class="top-banner">
     <div class="top-banner-text">
         <h1 class="h2">Become A Distributor</h1>
-        <p>The generated Lorem Ipsum is therefore always free from repetition.</p>
+        <!-- <p>The generated Lorem Ipsum is therefore always free from repetition.</p> -->
     </div>
     <div class="bg-shape mb-0">
         <img src="{{asset('asset/image/img/bg-03.svg')}}" alt="bg-2">
@@ -107,23 +107,24 @@
                 <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="" class="distributor-section2-img">
             </section>
             <section class="col-md-7 col-lg-6" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
-                <form action="#" class="my-form">
+                <form action="#" class="my-form" method="POST" id="contact_us_form">
                     <div class="form-group form-heading">
                         <h2 class="form-h4" style="color: #ffffff !important;">Send your Inquiry</h2>
                         <p style="color: #ffffff !important;">If you have any questions please fell free to contact with us.</p>
                     </div>
                     <div class="form-group form-group-row">
-                        <input type="text" class="form-control" placeholder="First Name" id="name1">
-                        <input type="text" class="form-control" placeholder="Last Name" id="name2">
+                        <input type="text" class="form-control" placeholder="First Name" id="name1" name="f_name">
+                        <input type="text" class="form-control" placeholder="Last Name" id="name2" name="l_name">
                     </div>
                     <div class="form-group form-group-row">
-                        <input type="email" class="form-control" placeholder="Email" id="email1">
-                        <input type="number" class="form-control" placeholder="Phone Number" id="phone1">
+                        <input type="email" class="form-control" placeholder="Email" id="email1" name="email">
+                        <input type="number" class="form-control" placeholder="Phone Number" id="phone1" name="phone">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control msg" placeholder="Write Your Inquiry" rows="6" id="msg1"></textarea>
+                        <textarea class="form-control msg" placeholder="Write Your Inquiry" rows="6" id="msg1" name="inquiry"></textarea>
                     </div>
-                    <button type="submit" class="btn my-btn">send</button>
+                    <input type="hidden" value="distributor" name="type">
+                    <button type="button" class="btn my-btn" onclick="submitContactUs()">send</button>
                 </form>
             </section>
         </section>

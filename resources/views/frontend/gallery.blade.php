@@ -5,7 +5,7 @@
 <section class="top-banner">
     <div class="top-banner-text">
         <h1 class="h2">our Gallery</h1>
-        <p>The generated Lorem Ipsum is therefore always free from repetition.</p>
+        <!-- <p>The generated Lorem Ipsum is therefore always free from repetition.</p> -->
     </div>
     <div class="bg-shape mb-0">
         <img src="{{asset('asset/image/img/bg-03.svg')}}" alt="bg-2">

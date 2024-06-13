@@ -6,6 +6,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 // use App\Http\Controllers\Admin\Settings\ContactController;
 // use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Admin\ContactUsController;
+use App\Http\Controllers\Admin\DistribuController;
 
 // Temporary
 use App\Http\Controllers\TemporayController;
@@ -66,7 +67,7 @@ Route::middleware('auth')->group(function () {
 
     // Contact Route
     Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
-
+    Route::get('/admin/distributor', [DistribuController::class, 'show'])->name('admin.distributor');
     // Temprary Route
     Route::get('/admin/service', [TemporayController::class, 'show'])->name('temprary.show');
 
