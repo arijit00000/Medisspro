@@ -104,7 +104,7 @@
     <div class="container">
         <section class="row no-gutters">
             <section class="col-md-5 col-lg-6" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="" class="distributor-section2-img">
+                <img src="{{asset('asset/image/banner/distributor.jpg')}}" alt="" class="distributor-section2-img">
             </section>
             <section class="col-md-7 col-lg-6" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
                 <form action="#" class="my-form" method="POST" id="contact_us_form">

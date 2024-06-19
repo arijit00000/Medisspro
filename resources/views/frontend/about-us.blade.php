@@ -54,7 +54,7 @@
                 <section class="row">
                     <section class="col-md-6" data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2600">
                         <section class="vision-card">
-                            <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="about-img" loading="lazy">
+                            <img src="{{asset('asset/image/banner/our-vision.jpg')}}" alt="about-img" loading="lazy">
                             <div class="my-heading">
                                 <h2 class="h1">Our vision</h2>
                                 <p>Our vision is to revolutionize the healthcare industry by providing cutting-edge
@@ -68,7 +68,7 @@
                     </section>
                     <section class="col-md-6" data-aos="flip-right" data-aos-easing="ease-out-cubic" data-aos-duration="2600">
                         <section class="vision-card">
-                            <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="about-img" loading="lazy">
+                            <img src="{{asset('asset/image/banner/our-mision.jpg')}}" alt="about-img" loading="lazy">
                             <div class="my-heading">
                                 <h2 class="h1">Our mission</h2>
                                 <p>Our mission at Medisspro is to empower healthcare professionals with innovative & advanced
@@ -189,7 +189,7 @@
     <section class="container">
         <section class="row" style="align-items: center;">
             <section class="col-md-6 about-img" data-aos="fade-right" data-aos-offset="400" data-aos-easing="ease-in-sine">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="about-img" loading="lazy">
+                <img src="{{asset('asset/image/banner/why-medisspro.jpg')}}" alt="about-img" loading="lazy">
             </section>
             <section class="col-md-6" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
                 <div class="my-heading">

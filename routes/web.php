@@ -96,6 +96,14 @@ Route::middleware('auth')->group(function () {
 
 require __DIR__.'/auth.php';
 
+Route::get('/all-clear', function () {
+
+    Artisan::call('route:cache');
+    Artisan::call('view:clear');
+    Artisan::call('config:cache');
+    echo 'clear-all';die;
+});
+
 // New Routs 
 
 Route::get('/head', [LayoutsController::class, 'header']);

@@ -13,10 +13,10 @@
             <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="">
         </div>
         <div class="item">
-            <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="">
+            <img src="{{asset('asset/image/banner/banner-02.jpg')}}" alt="">
         </div>
         <div class="item">
-            <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="">
+            <img src="{{asset('asset/image/banner/banner-03.jpg')}}" alt="">
         </div>
     </div>
     <div class="slider-bg-clr"></div>
@@ -30,7 +30,7 @@
     <section class="container">
         <section class="top-section">
             <section class="section1-area" data-aos="fade-up" data-aos-duration="2400">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="section1-img1" class="section1-img" loading="lazy"
+                <img src="{{asset('asset/image/icon/services.png')}}" alt="section1-img1" class="section1-img" loading="lazy"
                      data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2600">
                 <section class="section1-text">
                     <h2 class="h4">Services</h2>
@@ -38,7 +38,7 @@
                 </section>
             </section>
             <section class="section1-area" data-aos="fade-up" data-aos-duration="2400">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="section1-img1" class="section1-img" loading="lazy"
+                <img src="{{asset('asset/image/icon/products.png')}}" alt="section1-img1" class="section1-img" loading="lazy"
                      data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2600">
                 <section class="section1-text">
                     <h2 class="h4">Products</h2>
@@ -46,7 +46,7 @@
                 </section>
             </section>
             <section class="section1-area" data-aos="fade-up" data-aos-duration="2400">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="section1-img1" class="section1-img" loading="lazy"
+                <img src="{{asset('asset/image/icon/distibutor.png')}}" alt="section1-img1" class="section1-img" loading="lazy"
                      data-aos="flip-left" data-aos-easing="ease-out-cubic" data-aos-duration="2600">
                 <section class="section1-text">
                     <h2 class="h4">Distributors</h2>
@@ -63,7 +63,7 @@
         <section class="row" style="align-items: center;">
             <section class="col-md-6 about-img" data-aos="fade-right" data-aos-offset="400"
                      data-aos-easing="ease-in-sine">
-                <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="about-img" loading="lazy">
+                <img src="{{asset('asset/image/banner/about-us.jpg')}}" alt="about-img" loading="lazy">
             </section>
             <section class="col-md-6" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
                 <div class="my-heading">
@@ -163,7 +163,7 @@
                              data-aos-easing="ease-in-sine">
                         <section class="text">
                             <h2 class="h4">Logistic</h2>
-                            <!-- <p>Lorem ipsum is simply dummy text of printing & typesetting industry.</p> -->
+                            <p>Medical logistics is the logistics of pharmaceuticals, medical and surgical supplies.</p>
                         </section>
                         <h3 class="h6" style="margin-right: 0;">01</h3>
                     </section>
@@ -171,14 +171,14 @@
                              data-aos-easing="ease-in-sine">
                         <section class="text">
                             <h2 class="h4">Distributor</h2>
-                            <!-- <p>Lorem ipsum is simply dummy text of printing & typesetting industry.</p> -->
+                            <p>Medicine distributors play a crucial role in health industry by providing medicical equipments.</p>
                         </section>
                         <h3 class="h6" style="margin-right: 0;"><span class="d-sm-none">02</span> <span
                                 class="d-none d-sm-block">03</span></h3>
                     </section>
                 </section>
                 <section class="section-box section-box2 my-order1" data-aos="fade-up" data-aos-duration="2400">
-                    <img src="{{asset('asset/image/banner/banner-01.jpg')}}" alt="section5-img3" class="section5-main-img"
+                    <img src="{{asset('asset/image/banner/key-achivement.jpg')}}" alt="section5-img3" class="section5-main-img"
                          loading="lazy">
                 </section>
                 <section class="section-box section-box1 my-order3">
@@ -187,8 +187,8 @@
                         <h3 class="h6" style="margin-left: 0;"><span class="d-sm-none">03</span> <span
                                 class="d-none d-sm-block">02</span></h3>
                         <section class="text">
-                            <h2 class="h4">Business & Marketing</h2>
-                            <!-- <p>Lorem ipsum is simply dummy text of printing & typesetting industry.</p> -->
+                            <h2 class="h4">Business</h2>
+                            <p>Health Marketing frequently be a B2C form of marketing, as it encompasses wellness.</p>
                         </section>
                     </section>
                     <section class="section5-text" data-aos="fade-left" data-aos-offset="400"
@@ -196,7 +196,7 @@
                         <h3 class="h6" style="margin-left: 0;">04</h3>
                         <section class="text">
                             <h2 class="h4">Collaboration</h2>
-                            <!-- <p>Lorem ipsum is simply dummy text of printing & typesetting industry.</p> -->
+                            <p>Collaboration is defined as health care professionals assuming complementary roles.</p>
                         </section>
                     </section>
                 </section>
