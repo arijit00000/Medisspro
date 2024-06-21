@@ -232,14 +232,14 @@
                         <a href="{{route('temprary.show')}}"><i class="fa fa-address-book"></i> Service Request</a>
                     </li>
 
-                    <!-- <li>
+                    <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#settings"><i
                                 class="fa fa-cog"></i> Settings <i class="fa fa-caret-down"></i></a>
                         <ul id="settings" class="collapse">
                             <li>
-                                <a href="#">Header Footer</a>
+                                <a href="{{route('settings.homeheader')}}">Header Footer</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">Home Page</a>
                             </li>
                             <li>
@@ -247,9 +247,9 @@
                             </li>
                             <li>
                                 <a href="#">Contact Page</a>
-                            </li>
+                            </li> -->
                         </ul>
-                    </li> -->
+                    </li>
                     <!-- <li>
                         <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
                     </li> -->

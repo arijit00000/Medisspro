@@ -24,4 +24,8 @@ class HeaderFooter extends Model
         "twitter",
         "footer_text"
     ]);
+
+    protected $casts = [
+        'branch_office' => 'array'
+    ];
 }

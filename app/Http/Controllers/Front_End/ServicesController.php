@@ -4,13 +4,15 @@ namespace App\Http\Controllers\Front_End;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Settings\HeaderFooter;
 // Temporary
 use App\Models\Temporary;
 
 class ServicesController extends Controller
 {
     public function service(){
-        return view('frontend.services');
+        $data = HeaderFooter::get();
+        return view('frontend.services',compact('data'));
     }
 
     public function querySubmit(Request $request){

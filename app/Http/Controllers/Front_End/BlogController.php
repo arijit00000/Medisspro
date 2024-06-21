@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 class BlogController extends Controller
 {
     public function blog(){
-        return view('frontend.blog');
+        $data = HeaderFooter::get();
+        return view('frontend.blog',compact('data'));
     }
 }

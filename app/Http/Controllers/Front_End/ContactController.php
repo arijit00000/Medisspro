@@ -5,11 +5,13 @@ namespace App\Http\Controllers\Front_End;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Settings\ContactUs\ContactUs;
+use App\Models\Settings\HeaderFooter;
 
 class ContactController extends Controller
 {
     public function contact(){
-        return view('frontend.contact-us');
+        $data = HeaderFooter::get();
+        return view('frontend.contact-us',compact('data'));
     }
 
     public function contactSubmit(Request $request){

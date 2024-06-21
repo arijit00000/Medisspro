@@ -22,20 +22,26 @@
 </head>
 <body>
 
+@if(isset($data))
+@foreach($data as $da)
+
+@endforeach
+@endif
+
 <!--nav-->
 <header>
     <div class="nav-top">
         <div class="container">
             <div class="contact-div">
                 <ul class="contact-ul">
-                    <li><a><i data-feather="phone-call"></i> <span>+91 88845 38378</span></a></li>
-                    <li><a><i data-feather="mail"></i> <span>connect@medisspro.com</span></a></li>
+                    <li><a><i data-feather="phone-call"></i> <span>+91 {{$da->mobile}}</span></a></li>
+                    <li><a><i data-feather="mail"></i> <span>{{$da->email}}</span></a></li>
                 </ul>
                 <ul class="icon-ul">
-                    <li><a href="#"><i data-feather="facebook"></i></a></li>
-                    <li><a href="#"><i data-feather="instagram"></i></a></li>
-                    <li><a href="#"><i data-feather="linkedin"></i></a></li>
-                    <li><a href="#"><i data-feather="twitter"></i></a></li>
+                    <li><a href="{{$da->facebook}}"><i data-feather="facebook"></i></a></li>
+                    <li><a href="{{$da->instagram}}"><i data-feather="instagram"></i></a></li>
+                    <li><a href="{{$da->linkdin}}"><i data-feather="linkedin"></i></a></li>
+                    <li><a href="{{$da->twitter}}"><i data-feather="twitter"></i></a></li>
                 </ul>
             </div>
         </div>

@@ -1,3 +1,9 @@
+@if(isset($data))
+@foreach($data as $da)
+
+@endforeach
+@endif
+
 <!--footer-->
 <footer id="contact" data-aos="fade-up" data-aos-duration="2000">
     <div class="bg-shape">
@@ -7,7 +13,7 @@
         <section class="row">
             <section class="col-md-12 col-lg-4">
                 <img src="{{asset('asset/image/logo/logo.png')}}" alt="footer-logo" class="footer-logo" loading="lazy">
-                <p class="footer-p footer-text">THE WORLD’S MOST INNOVATIVE HEALTHCARE NETWORK</p>
+                <p class="footer-p footer-text">{{$da->footer_text}}</p>
                 <section class="social-icon">
                     <a href="#"><i data-feather="facebook"></i></a>
                     <a href="#"><i data-feather="instagram"></i></a>
@@ -33,12 +39,12 @@
                 <h3 class="h5">Contact Info</h3>
                 <ul class="footer-contact">
                     <li><i data-feather="map-pin" style="margin-top: 5px;"></i>
-                        <p class="footer-p">Corporate office : Bengaluru</p></li>
+                        <p class="footer-p">Corporate office : {{$da->corporate_office}}</p></li>
                     <li><i data-feather="map-pin" style="margin-top: 5px;"></i>
-                        <p class="footer-p">Branch office : Hyderabad, Coimbatore</p></li>
-                    <li><i data-feather="globe"></i> <a href="http://www.medisspro.com/">www.medisspro.com</a></li>
-                    <li><i data-feather="mail"></i> <a>connect@medisspro.com</a></li>
-                    <li><i data-feather="phone-call"></i> <a>+91 88845 38378</a></li>
+                        <p class="footer-p">Branch office : {{implode(', ',$da->branch_office)}}</p></li>
+                    <li><i data-feather="globe"></i> <a href="{{$da->web}}">www.medisspro.com</a></li>
+                    <li><i data-feather="mail"></i> <a>{{$da->email}}</a></li>
+                    <li><i data-feather="phone-call"></i> <a>+91 {{$da->mobile}}</a></li>
                 </ul>
             </section>
             <section class="col-md-4 col-lg-3 f-order-2">

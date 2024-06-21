@@ -4,7 +4,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 // use App\Http\Controllers\Admin\Settings\HomeController;
 // use App\Http\Controllers\Admin\Settings\ContactController;
-// use App\Http\Controllers\Admin\Settings\HeaderFooterController;
+use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DistribuController;
 
@@ -72,8 +72,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/service', [TemporayController::class, 'show'])->name('temprary.show');
 
     // Settings Home Routes
-    // Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
-    // Route::post('/admin/settings/header-footer/submit', [HeaderFooterController::class, 'homeheadersubmit'])->name('settings.homeheader.submit');
+    Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
+    Route::post('/admin/settings/header-footer/submit', [HeaderFooterController::class, 'homeheadersubmit'])->name('settings.homeheader.submit');
 
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');
