@@ -67,13 +67,13 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-h5">Inquiry Forms</h4>
+                <h4 class="modal-h5">Enquiry Forms</h4>
                 <button type="button" class="close" data-dismiss="modal">&times;</button>
             </div>
             <div class="modal-body">
                 <form action="#" class="my-form" id="service_inquiry" method="POST">
                     <div class="form-group form-heading">
-                        <h2 class="form-h4">Send your Inquiry</h2>
+                        <h2 class="form-h4">Send your Enquiry</h2>
                         <p>If you have any questions please fell free to contact with us.</p>
                     </div>
                     <div class="form-group form-group-row">
@@ -97,7 +97,7 @@
                         <input type="number" class="form-control" placeholder="Phone Number" id="phone-1" name="mobile">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control msg" placeholder="Write Your Inquiry" rows="6" id="msg-1" name="message"></textarea>
+                        <textarea class="form-control msg" placeholder="Write Your Enquiry" rows="6" id="msg-1" name="message"></textarea>
                     </div>
                     <button type="button" id="homeinquirysubmit" class="btn my-btn">send</button>
                 </form>

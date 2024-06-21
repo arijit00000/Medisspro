@@ -109,7 +109,7 @@
             <section class="col-md-7 col-lg-6" data-aos="fade-left" data-aos-offset="400" data-aos-easing="ease-in-sine">
                 <form action="#" class="my-form" method="POST" id="contact_us_form">
                     <div class="form-group form-heading">
-                        <h2 class="form-h4" style="color: #ffffff !important;">Send your Inquiry</h2>
+                        <h2 class="form-h4" style="color: #ffffff !important;">Send your Enquiry</h2>
                         <p style="color: #ffffff !important;">If you have any questions please fell free to contact with us.</p>
                     </div>
                     <div class="form-group form-group-row">
@@ -121,7 +121,7 @@
                         <input type="number" class="form-control" placeholder="Phone Number" id="phone1" name="phone">
                     </div>
                     <div class="form-group">
-                        <textarea class="form-control msg" placeholder="Write Your Inquiry" rows="6" id="msg1" name="inquiry"></textarea>
+                        <textarea class="form-control msg" placeholder="Write Your Enquiry" rows="6" id="msg1" name="inquiry"></textarea>
                     </div>
                     <input type="hidden" value="distributor" name="type">
                     <button type="button" class="btn my-btn" onclick="submitContactUs()">send</button>
