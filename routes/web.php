@@ -7,6 +7,7 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DistribuController;
+use App\Http\Controllers\Admin\Settings\AdminServiceController;
 
 // Temporary
 use App\Http\Controllers\TemporayController;
@@ -69,11 +70,16 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
     Route::get('/admin/distributor', [DistribuController::class, 'show'])->name('admin.distributor');
     // Temprary Route
-    Route::get('/admin/service', [TemporayController::class, 'show'])->name('temprary.show');
+    Route::get('/admin/service/request', [TemporayController::class, 'show'])->name('temprary.show.request');
 
-    // Settings Home Routes
+    // Admin Home Routes
     Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
     Route::post('/admin/settings/header-footer/submit', [HeaderFooterController::class, 'homeheadersubmit'])->name('settings.homeheader.submit');
+
+    // Admin Service Routes
+    Route::get('/admin/service', [AdminServiceController::class, 'show'])->name('service.show');
+    Route::post('/admin/service/submit', [AdminServiceController::class, 'submit'])->name('service.submit');
+    Route::get('/admin/service/edit', [AdminServiceController::class, 'edit'])->name('service.edit');
 
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');

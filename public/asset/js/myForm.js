@@ -12,9 +12,12 @@ function formSubmit(URL, formData){
                         icon:"success",
                         title: "Great",
                         text: "Inquiry Successfully Submit !!",
-                        confirmButtonText:"Ok"
-                    })
-                    resetForm() 
+                        confirmButtonText:"Ok",
+                    }).then((result) => { // consuming call back
+                        console.log(result)
+                        if (result.isConfirmed) {
+                            window.location.reload()
+                        }})
                 }
                 else{
                     Swal.fire({

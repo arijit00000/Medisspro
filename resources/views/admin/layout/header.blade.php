@@ -229,7 +229,7 @@
                         <a href="{{route('admin.contact')}}"><i class="fa fa-address-book"></i> Contact Us</a>
                     </li>
                     <li>
-                        <a href="{{route('temprary.show')}}"><i class="fa fa-address-book"></i> Service Request</a>
+                        <a href="{{route('temprary.show.request')}}"><i class="fa fa-address-book"></i> Service Request</a>
                     </li>
 
                     <li>
@@ -238,6 +238,9 @@
                         <ul id="settings" class="collapse">
                             <li>
                                 <a href="{{route('settings.homeheader')}}">Header Footer</a>
+                            </li>
+                            <li>
+                                <a href="{{route('service.show')}}">Our Service</a>
                             </li>
                             <!-- <li>
                                 <a href="#">Home Page</a>

@@ -77,16 +77,7 @@
                         <p>If you have any questions please fell free to contact with us.</p>
                     </div>
                     <div class="form-group form-group-row">
-                        <select id="choices" name="choices" class="form-control">
-                            <option value="Medical/surgical equipment & disposables">Medical/surgical equipment & disposables</option>
-                            <option value="Specialized ICU operations">Specialized ICU operations</option>
-                            <option value="Healthcare professional recruitments">Healthcare professional recruitments (India/abroad)</option>
-                            <option value="Hospital management, administration & operations">Hospital management, administration & operations</option>
-                            <option value="Home Care Services">Home Care Services</option>
-                            <option value="Health Care IT Services, Hospital Management Software">Health Care IT Services, Hospital Management Software</option>
-                            <option value="Medico-legal Services">Medico-legal Services</option>
-                            <option value="Medical Tourism">Medical Tourism</option>
-                        </select>
+                        <input type="text" class="form-control" id="enquireHeading" name="serviceid">
                     </div>
                     <div class="form-group form-group-row">
                         <input type="text" class="form-control" placeholder="First Name" id="name-1" name="f_name">
@@ -108,10 +99,9 @@
 <!--Inquiry Forms Modal end-->
 
 <script>
-    // function openInquiry(id, headline) 
-    function openInquiry(){
+    function openInquiry(id, headline){
         $('#inquiry-modal').modal('show');
-        // $('#enquire').val(headline);
+        $('#enquireHeading').val(headline);
 
         $('#homeinquirysubmit').on('click', function() {
 

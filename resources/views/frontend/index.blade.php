@@ -93,13 +93,17 @@
         </div>
         <div class="carousel-area" data-aos="fade-up" data-aos-duration="2400">
             <div class="owl-carousel owl-theme services-carousel">
+                @if(isset($service))
+                @foreach($service as $card)
                 <section class="services-card">
-                    <img src="{{asset('asset/image/icon/medical-and-surgical-equipment.png')}}" alt="icon-01" class="services-icon" loading="lazy">
-                    <h3 class="card-name">medical/surgical <br> equipment & disposables</h3>
-                    <p>We provide comprehensive range of a high-quality medical/surgical equipment & disposables</p>
-                    <button class="btn btn-primary read-mare" onclick="openInquiry()">Enquiry now!</button>
+                    <img src="{{asset($card->service_img)}}" alt="icon-01" class="services-icon" loading="lazy">
+                    <h3 class="card-name">{{$card->service_headline}}</h3>
+                    <p>{{$card->service_content}}</p>
+                    <button class="btn btn-primary read-mare" onclick="openInquiry('{{$card->s_card_id}}','{{$card->service_headline}}')">Enquiry now!</button>
                 </section>
-                <section class="services-card">
+                @endforeach
+                @endif
+                <!-- <section class="services-card">
                     <img src="{{asset('asset/image/icon/icu-operation.png')}}" alt="icon-02" class="services-icon" loading="lazy">
                     <h3 class="card-name">Specialized <br> ICU operations</h3>
                     <p>We deliver critical equipment and support services for intensive care units</p>
@@ -140,7 +144,7 @@
                     <h3 class="card-name">Medical Tourism</h3>
                     <p>We provide comprehensive, cost-effective medical care to patients in India and overseas. Our end-to-end services provide us a unique medical tourism option</p>
                     <button class="btn btn-primary read-mare" onclick="openInquiry()">Enquiry now!</button>
-                </section>
+                </section> -->
             </div>
         </div>
     </section>
