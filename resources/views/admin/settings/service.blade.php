@@ -5,9 +5,11 @@
         <div class="row">
             <div class="col-md-12">
                 <form id="serviceForm" method="POST">
+                    <input type="hidden" id="serviceid" name="serviceid">
                     <div class="form-group">
                         <label for="image">Image</label>
-                        <input type="file" class="form-control" id="servicecardimage" accept="image/*" name="serviceimg">
+                        <input type="file" class="form-control" id="servicecardimage" accept="image/*" name="serviceimg" onchange="previewImage(event)">
+                        <img class="imagepreview" id="serviceimage-preview" src="#" alt="Image Preview">
                     </div>
                     <div class="form-group">
                         <label for="heading">Heading</label>
@@ -40,11 +42,11 @@
                         @foreach($service as $card)
                         <tr>
                             <td>{{$card->s_card_id}}</td>
-                            <td><img src="{{asset($card->service_img)}}" class="multiimg" alt="Image Not Avaliable"></td>
-                            <td>{{$card->service_headline}}</td>
-                            <td>{{$card->service_content}}</td>
-                            <td><a href="{{$card->s_card_id}}"><i class="fa fa-edit"></i></a></td>
-                            <td><a href=""><i class="fa fa-trash"></i></a></td>
+                            <td id="serviceImg-{{$card->s_card_id}}"><img src="{{asset($card->service_img)}}" class="multiimg" alt="Image Not Avaliable"></td>
+                            <td id="serviceHeading-{{$card->s_card_id}}">{{$card->service_headline}}</td>
+                            <td id="serviceContent-{{$card->s_card_id}}">{{$card->service_content}}</td>
+                            <td><button onclick="edit({{$card->s_card_id}})"><i class="fa fa-edit"></i></button></td>
+                            <td><button onclick="del({{$card->s_card_id}})"><i class="fa fa-trash"></i></button></td>
                         </tr>
                         @endforeach
                     </tbody>
@@ -66,6 +68,35 @@
             ourService.append('_token',"{{ csrf_token() }}");
             // console.log(ourService.get('serviceheading'));
             formSubmit(URL, ourService);
+        }
+
+        function edit(id){
+            let serviceImage = document.getElementById('serviceImg-'+id).querySelector('img').src;
+            let serviceHeadline = document.getElementById('serviceHeading-'+id).textContent;
+            let serviceContent = document.getElementById('serviceContent-'+id).textContent;
+
+            let imagePreview = document.getElementById('serviceimage-preview');
+            imagePreview.src = serviceImage;
+            imagePreview.style.display = "block";
+
+            document.getElementById('servicecardheading').value = serviceHeadline;
+            document.getElementById('servicecardcontext').value = serviceContent;
+            document.getElementById('serviceid').value = id;
+        }
+
+        function previewImage(event) {
+            // Display the chosen image as a preview
+            let imagePreview = document.getElementById('serviceimage-preview');
+            imagePreview.src = URL.createObjectURL(event.target.files[0]);
+            imagePreview.style.display = "block";
+        }
+
+        function del(id){
+            if(confirm("Are You Sure?") == true){
+                let URL = "{{route('service.delete')}}/"+id;
+                let CSRF = '{{ csrf_token() }}'
+                deleteRecord(URL, CSRF);
+            }
         }
     </script>
 @endsection

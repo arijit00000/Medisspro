@@ -8117,3 +8117,9 @@ button.close {
     border: #030993 1px solid;
     text-align: center;
 }
+
+.imagepreview{
+    display: none;
+    max-width: 100%;
+    margin-top: 10px;
+}

@@ -26,20 +26,42 @@ class AdminServiceController extends Controller
            $image = $request->file('serviceimg');
            $imageName = time().'.'.$image->getClientOriginalExtension();
            $imagePath = $image->move('uploads',$imageName);
-        } 
+        }
 
-        $insertdata = ([
-            "service_img" => $imagePath,
-            "service_headline" => $request->input('serviceheading'),
-            "service_content" => $request->input('servicecontent')
-        ]);
-
-        OurService::create($insertdata);
+        $id = $request->input('serviceid');
         
+        if(empty($id)){
+            $insertdata = ([
+                "service_img" => $imagePath,
+                "service_headline" => $request->input('serviceheading'),
+                "service_content" => $request->input('servicecontent')
+            ]);
+
+            OurService::create($insertdata);
+        }
+        else{
+            if(isset($imagePath)){
+                $insertdata = ([
+                    "service_img" => $imagePath,
+                    "service_headline" => $request->input('serviceheading'),
+                    "service_content" => $request->input('servicecontent')
+                ]);
+            }
+            else{
+                $insertdata = ([
+                    "service_headline" => $request->input('serviceheading'),
+                    "service_content" => $request->input('servicecontent')
+                ]);
+            }
+
+            OurService::where('s_card_id', $id)->update($insertdata);
+        }
         return response()->json(['success'=>true]);
     }
 
-    protected function edit(){
-        dd("Arijit");
+    protected function delete(Request $request, $id){
+        OurService::where('s_card_id', $id)->delete();
+        return response()->json(['success'=>true]);
     }
+
 }

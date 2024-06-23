@@ -40,3 +40,23 @@ function formSubmit(URL, formData){
             }
         })
     }
+
+function deleteRecord(URL, CSRF){
+    $.ajax({
+        type:"POST",
+        url:URL,
+        data: {_token: CSRF},
+        dataType: "json",
+        success:function(resultData){
+            Swal.fire({
+                title: 'Deleted',
+                text: 'Record has been deleted successfully',
+                icon: 'success'
+            }).then((result)=> {
+            console.log(result)
+            if (result.isConfirmed) {
+                window.location.reload()
+            }})
+        }
+    })
+}

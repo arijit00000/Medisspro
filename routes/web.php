@@ -79,7 +79,7 @@ Route::middleware('auth')->group(function () {
     // Admin Service Routes
     Route::get('/admin/service', [AdminServiceController::class, 'show'])->name('service.show');
     Route::post('/admin/service/submit', [AdminServiceController::class, 'submit'])->name('service.submit');
-    Route::get('/admin/service/edit', [AdminServiceController::class, 'edit'])->name('service.edit');
+    Route::post('/admin/service/delete/{id?}', [AdminServiceController::class, 'delete'])->name('service.delete');
 
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');
