@@ -242,8 +242,8 @@
                             <li>
                                 <a href="{{route('service.show')}}">Our Service</a>
                             </li>
-                            <!-- <li>
-                                <a href="#">Home Page</a>
+                            <li>
+                                <a href="{{route('product.show')}}">Our Product</a>
                             </li>
                             <li>
                                 <a href="#">About Us</a>

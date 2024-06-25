@@ -8,6 +8,7 @@ use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DistribuController;
 use App\Http\Controllers\Admin\Settings\AdminServiceController;
+use App\Http\Controllers\Admin\Settings\AdminProductController;
 
 // Temporary
 use App\Http\Controllers\TemporayController;
@@ -81,6 +82,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/service/submit', [AdminServiceController::class, 'submit'])->name('service.submit');
     Route::post('/admin/service/delete/{id?}', [AdminServiceController::class, 'delete'])->name('service.delete');
 
+    // Admin Product Routes
+    Route::get('/admin/product', [AdminProductController::class, 'show'])->name('product.show');
+    Route::post('/admin/product/submit', [AdminProductController::class, 'submit'])->name('product.submit');
+    Route::post('/admin/product/delete/{id?}', [AdminProductController::class, 'delete'])->name('product.delete');
+
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');
     // Route::post('/admin/settings/home/topheading/submit', [HomeController::class, 'topheadingsubmit'])->name('topheading.submit');
@@ -120,6 +126,7 @@ Route::get('/about-us', [AboutusController::class, 'about'])->name('aboutus.page
 Route::get('/services', [ServicesController::class, 'service'])->name('service.page');
 Route::post('/services/submit', [ServicesController::class, 'querySubmit'])->name('query.submit');
 Route::get('/products', [ProductController::class, 'product'])->name('product.page');
+Route::get('/products/{id?}', [ProductController::class, 'detailsPage'])->name('product.details');
 Route::get('/distributor', [DistributorController::class, 'distributor'])->name('distributor.page');
 Route::get('/gallay', [GallaryController::class, 'gallary'])->name('gallary.page');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog.page');
