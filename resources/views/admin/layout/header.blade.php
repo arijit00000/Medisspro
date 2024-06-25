@@ -246,11 +246,14 @@
                                 <a href="{{route('product.show')}}">Our Product</a>
                             </li>
                             <li>
+                                <a href="{{route('distributor.show')}}">Our Distributor</a>
+                            </li>
+                            <li>
                                 <a href="#">About Us</a>
                             </li>
                             <li>
                                 <a href="#">Contact Page</a>
-                            </li> -->
+                            </li>
                         </ul>
                     </li>
                     <!-- <li>

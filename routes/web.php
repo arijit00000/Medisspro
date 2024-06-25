@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DistribuController;
 use App\Http\Controllers\Admin\Settings\AdminServiceController;
 use App\Http\Controllers\Admin\Settings\AdminProductController;
+use App\Http\Controllers\Admin\Settings\AdminDistributorController;
 
 // Temporary
 use App\Http\Controllers\TemporayController;
@@ -69,7 +70,7 @@ Route::middleware('auth')->group(function () {
 
     // Contact Route
     Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
-    Route::get('/admin/distributor', [DistribuController::class, 'show'])->name('admin.distributor');
+    Route::get('/admin/distributor/list', [DistribuController::class, 'show'])->name('admin.distributor');
     // Temprary Route
     Route::get('/admin/service/request', [TemporayController::class, 'show'])->name('temprary.show.request');
 
@@ -87,6 +88,13 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/product/submit', [AdminProductController::class, 'submit'])->name('product.submit');
     Route::post('/admin/product/delete/{id?}', [AdminProductController::class, 'delete'])->name('product.delete');
 
+    // Admin Distributor Routes
+    Route::get('/admin/distributor', [AdminDistributorController::class, 'show'])->name('distributor.show');
+    Route::post('/admin/distributor/submit', [AdminDistributorController::class, 'headingsubmit'])->name('distributor.heading.submit');
+    Route::post('/admin/distributor/delete/{id?}', [AdminDistributorController::class, 'delete'])->name('distributor.heading.delete');
+    Route::post('/admin/distributor-list/submit', [AdminDistributorController::class, 'listsubmit'])->name('distributor.list.submit');
+    Route::post('/admin/distributor-list/delete/{idi?}', [AdminDistributorController::class, 'listdelete'])->name('distributor.list.delete');
+    Route::post('/admin/distributor-img/submit', [AdminDistributorController::class, 'imgsubmit'])->name('distributor.img.submit');
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');
     // Route::post('/admin/settings/home/topheading/submit', [HomeController::class, 'topheadingsubmit'])->name('topheading.submit');
