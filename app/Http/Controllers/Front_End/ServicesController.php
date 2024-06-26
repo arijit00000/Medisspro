@@ -6,8 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Settings\HeaderFooter;
 use App\Models\OurService\OurService;
-// Temporary
-use App\Models\Temporary;
+use App\Models\Settings\ContactUs\ContactUs;
 
 class ServicesController extends Controller
 {
@@ -19,14 +18,14 @@ class ServicesController extends Controller
 
     public function querySubmit(Request $request){
         $insertdata = ([
-            "first_name" => $request->input('f_name'),
-            "last_name" => $request->input('l_name'),
+            "s_card_id" => $request->input('serviceid'),
+            "f_name" => $request->input('f_name'),
+            "l_name" => $request->input('l_name'),
             "email" => $request->input('email'),
             "mobile" => $request->input('mobile'),
-            "text" => $request->input('message'),
-            "service" => $request->input('choices')
+            "inquire" => $request->input('message')
         ]);
-        Temporary::insert($insertdata);
+        ContactUs::insert($insertdata);
         return response()->json(["success"=>true]);
     }
 }

@@ -229,7 +229,7 @@
                         <a href="{{route('admin.contact')}}"><i class="fa fa-address-book"></i> Contact Us</a>
                     </li>
                     <li>
-                        <a href="{{route('temprary.show.request')}}"><i class="fa fa-address-book"></i> Service Request</a>
+                        <a href="{{route('service.list')}}"><i class="fa fa-address-book"></i> Service Request</a>
                     </li>
 
                     <li>
@@ -251,9 +251,9 @@
                             <li>
                                 <a href="{{route('career.show')}}">Career Page</a>
                             </li>
-                            <li>
+                            <!-- <li>
                                 <a href="#">Contact Page</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                     <!-- <li>

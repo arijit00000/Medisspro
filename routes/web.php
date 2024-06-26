@@ -7,13 +7,11 @@ use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Settings\HeaderFooterController;
 use App\Http\Controllers\Admin\ContactUsController;
 use App\Http\Controllers\Admin\DistribuController;
+use App\Http\Controllers\Admin\ServiceController;
 use App\Http\Controllers\Admin\Settings\AdminServiceController;
 use App\Http\Controllers\Admin\Settings\AdminProductController;
 use App\Http\Controllers\Admin\Settings\AdminDistributorController;
 use App\Http\Controllers\Admin\Settings\AdminCareerController;
-
-// Temporary
-use App\Http\Controllers\TemporayController;
 
 // use App\Http\Controllers\Frontend\FrontendHomeController;
 // use App\Http\Controllers\Frontend\FrontendAboutController;
@@ -71,9 +69,10 @@ Route::middleware('auth')->group(function () {
 
     // Contact Route
     Route::get('/admin/contact', [ContactUsController::class, 'show'])->name('admin.contact');
+    // Distributor Route
     Route::get('/admin/distributor/list', [DistribuController::class, 'show'])->name('admin.distributor');
-    // Temprary Route
-    Route::get('/admin/service/request', [TemporayController::class, 'show'])->name('temprary.show.request');
+    // Service Route
+    Route::get('/admin/service/request', [ServiceController::class, 'show'])->name('service.list');
     // Career Route
     Route::get('/admin/career/apply', [AdminCareerController::class, 'list'])->name('career.list');
 
@@ -132,7 +131,7 @@ Route::get('/all-clear', function () {
     echo 'clear-all';die;
 });
 
-// New Routs 
+// Frontend Routs 
 
 Route::get('/head', [LayoutsController::class, 'header']);
 Route::get('/foot', [LayoutsController::class, 'footer']);

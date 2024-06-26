@@ -5,12 +5,11 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Settings\ContactUs\ContactUs;
-// use App\Models\Settings\Home\SettingsHomeServiceCard;
 
 class ContactUsController extends Controller
 {
     public function show(Request $request){
-        // dd($request->all('search'));
+        
         $search = $request->input('search');
 
         if(!empty($search)){

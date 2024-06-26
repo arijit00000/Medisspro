@@ -26,16 +26,11 @@
             <tbody>
                     @foreach($data as $da)
                     <tr>
-                        <td>{{$da->first_name}} {{$da->last_name}}</td>
+                        <td>{{$da->f_name}} {{$da->	l_name}}</td>
                         <td>{{$da->email}}</td>
                         <td>{{$da->mobile}}</td>
-                        <!-- @if(isset($con->addServiceCard))
-                            <td>{{$con->addServiceCard->headline}}</td>
-                        @else
-                            <td></td>
-                        @endif -->
-                        <td>{{$da->service}}</td>
-                        <td>{{$da->text}}</td>
+                        <td>{{$da->addServiceCard->service_headline}}</td>
+                        <td>{{$da->inquire}}</td>
                     </tr>
                     @endforeach
             </tbody>

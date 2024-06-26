@@ -77,7 +77,7 @@
                         <p>If you have any questions please fell free to contact with us.</p>
                     </div>
                     <div class="form-group form-group-row">
-                        <input type="text" class="form-control" id="enquireHeading" name="serviceid">
+                        <input type="text" class="form-control" id="enquireHeading">
                     </div>
                     <div class="form-group form-group-row">
                         <input type="text" class="form-control" placeholder="First Name" id="name-1" name="f_name">
@@ -108,7 +108,7 @@
             let URL = "{{route('query.submit')}}"
             let serviceForm = document.getElementById('service_inquiry')
             let service = new FormData(serviceForm)
-            // service.append('serviceid',id)
+            service.append('serviceid',id)
             service.append('_token',"{{ csrf_token() }}")
             
             formSubmit(URL, service)

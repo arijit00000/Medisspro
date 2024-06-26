@@ -4,7 +4,7 @@ namespace App\Models\Settings\ContactUs;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-// use App\Models\Settings\Home\SettingsHomeServiceCard;
+use App\Models\OurService\OurService;
 
 class ContactUs extends Model
 {
@@ -25,7 +25,7 @@ class ContactUs extends Model
         's_card_id'
     ];
 
-    // public function addServiceCard(){
-    //     return $this->hasOne(SettingsHomeServiceCard::class, 's_card_id', 's_card_id');
-    // }
+    public function addServiceCard(){
+        return $this->hasOne(OurService::class, 's_card_id', 's_card_id');
+    }
 }
