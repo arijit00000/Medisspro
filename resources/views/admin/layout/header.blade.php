@@ -249,7 +249,7 @@
                                 <a href="{{route('distributor.show')}}">Our Distributor</a>
                             </li>
                             <li>
-                                <a href="#">About Us</a>
+                                <a href="{{route('career.show')}}">Career Page</a>
                             </li>
                             <li>
                                 <a href="#">Contact Page</a>

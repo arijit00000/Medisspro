@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\DistribuController;
 use App\Http\Controllers\Admin\Settings\AdminServiceController;
 use App\Http\Controllers\Admin\Settings\AdminProductController;
 use App\Http\Controllers\Admin\Settings\AdminDistributorController;
+use App\Http\Controllers\Admin\Settings\AdminCareerController;
 
 // Temporary
 use App\Http\Controllers\TemporayController;
@@ -73,6 +74,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/distributor/list', [DistribuController::class, 'show'])->name('admin.distributor');
     // Temprary Route
     Route::get('/admin/service/request', [TemporayController::class, 'show'])->name('temprary.show.request');
+    // Career Route
+    Route::get('/admin/career/apply', [AdminCareerController::class, 'list'])->name('career.list');
 
     // Admin Home Routes
     Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
@@ -95,6 +98,11 @@ Route::middleware('auth')->group(function () {
     Route::post('/admin/distributor-list/submit', [AdminDistributorController::class, 'listsubmit'])->name('distributor.list.submit');
     Route::post('/admin/distributor-list/delete/{idi?}', [AdminDistributorController::class, 'listdelete'])->name('distributor.list.delete');
     Route::post('/admin/distributor-img/submit', [AdminDistributorController::class, 'imgsubmit'])->name('distributor.img.submit');
+
+    // Admin Career Routes
+    Route::get('/admin/career', [AdminCareerController::class, 'show'])->name('career.show');
+    Route::post('/admin/career/submit', [AdminCareerController::class, 'submit'])->name('career.submit');
+    Route::post('/admin/career/delete/{id?}', [AdminCareerController::class, 'delete'])->name('career.delete');
     // Route::get('/admin/settings/home', [HomeController::class, 'home'])->name('settings.home');
     // Route::post('/admin/settings/home/banner/submit', [HomeController::class, 'bannersubmit'])->name('banner.submit');
     // Route::post('/admin/settings/home/topheading/submit', [HomeController::class, 'topheadingsubmit'])->name('topheading.submit');
@@ -139,5 +147,6 @@ Route::get('/distributor', [DistributorController::class, 'distributor'])->name(
 Route::get('/gallay', [GallaryController::class, 'gallary'])->name('gallary.page');
 Route::get('/blog', [BlogController::class, 'blog'])->name('blog.page');
 Route::get('/career', [CareerController::class, 'career'])->name('career.page');
+Route::post('/career/submit', [CareerController::class, 'submit'])->name('career.apply');
 Route::get('/contact-us', [ContactController::class, 'contact'])->name('contact.page');
 Route::post('/contact-us/submit', [ContactController::class, 'contactSubmit'])->name('contact.submit');
