@@ -12602,8 +12602,8 @@ footer .my-btn:hover {
   }
 }
 .blog-card .blog-img img {
-  width: 100%;
-  padding: 0px 46px;
+  width: auto;
+  padding: 0px 68px;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -13990,6 +13990,7 @@ footer .my-btn:hover {
 }
 .distributor-page .achievements-section .section5-area .section-box1{
 width: 100%;
+padding: top-35px,
 }
 .distributor-page .achievements-section{
   padding-right: 100px;
@@ -14121,6 +14122,7 @@ padding: 1px 15px 10px 15px;
   margin-bottom: 0;
 }
 .distributor-section2 .distributor-section2-img {
+  width: auto;
   height: 100%;
   object-fit: cover;
   object-position: center;
@@ -14128,6 +14130,7 @@ padding: 1px 15px 10px 15px;
 }
 @media (max-width: 767.98px) {
   .distributor-section2 .distributor-section2-img {
+    width: 100%;
     margin-bottom: 20px;
     height: auto;
     border-radius: 8px;
