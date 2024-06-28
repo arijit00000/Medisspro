@@ -231,6 +231,9 @@
                     <li>
                         <a href="{{route('service.list')}}"><i class="fa fa-address-book"></i> Service Request</a>
                     </li>
+                    <li>
+                        <a href="{{route('career.list')}}"><i class="fa fa-address-book"></i> Applied Job</a>
+                    </li>
 
                     <li>
                         <a href="javascript:;" data-toggle="collapse" data-target="#settings"><i
