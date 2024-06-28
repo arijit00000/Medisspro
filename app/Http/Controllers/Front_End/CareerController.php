@@ -18,7 +18,7 @@ class CareerController extends Controller
 
     public function submit(Request $request){
 
-        dd($request->all());
+        // dd($request->all());
         $request-validate([
             "applyName" => 'required',
             "applyEmail" => 'required|email',
