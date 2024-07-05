@@ -11,11 +11,14 @@ function formSubmit(URL, formData){
                     Swal.fire({
                         icon:"success",
                         title: "Great",
-                        text: "Inquiry Successfully Submit !!",
+                        text: "Enquiry Submited Successfully !!",
                         confirmButtonText:"Ok",
                     }).then((result) => { // consuming call back
-                        console.log(result)
+                        // console.log(result)
                         if (result.isConfirmed) {
+                            if(response.pdf){
+                                window.open(response.pdf, '_blank');
+                            }
                             window.location.reload()
                         }})
                 }

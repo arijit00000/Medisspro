@@ -65,6 +65,11 @@
                     <h2 class="h1">{{$pro->product_name}}</h2>
                     <p>{{$pro->product_details}}</p>
                 </div>
+                <div class="download-section">
+                    <div class="download-button">
+                       <button class="btn" onclick="openInquiry()">Download Product Brochure</button>               
+                   </div>
+                </div>
             </section>
         </section>
     </section>

@@ -3,8 +3,7 @@
 <!--top banner-->
 <section class="top-banner">
     <div class="top-banner-text">
-        <h1 class="h2">About Us</h1>
-        <p>We tirelessly strive to provide utmost professionalism & unmatched service in every interaction.</p>
+        <h1 class="h2">We tirelessly strive to provide utmost professionalism & unmatched service in every interaction</h1>
     </div>
     <div class="bg-shape mb-0">
         <img src="{{asset('asset/image/img/bg-03.svg')}}" alt="bg-2">

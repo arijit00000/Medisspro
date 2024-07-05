@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Settings\HeaderFooter;
 use App\Models\OurService\OurService;
 use App\Models\Settings\ContactUs\ContactUs;
+use App\Models\OurProduct\ProductBrochure;
 
 class ServicesController extends Controller
 {
@@ -17,15 +18,36 @@ class ServicesController extends Controller
     }
 
     public function querySubmit(Request $request){
-        $insertdata = ([
-            "s_card_id" => $request->input('serviceid'),
-            "f_name" => $request->input('f_name'),
-            "l_name" => $request->input('l_name'),
-            "email" => $request->input('email'),
-            "mobile" => $request->input('mobile'),
-            "inquire" => $request->input('message')
-        ]);
+        
+        $formType = $request->input('type');
+
+        if(isset($formType)){
+            $insertdata = ([
+                "f_name" => $request->input('f_name'),
+                "l_name" => $request->input('l_name'),
+                "email" => $request->input('email'),
+                "mobile" => $request->input('mobile'),
+                "inquire" => $request->input('message'),
+                "form_type" => $formType
+            ]);
+        }
+        else{
+            $insertdata = ([
+                "s_card_id" => $request->input('serviceid'),
+                "f_name" => $request->input('f_name'),
+                "l_name" => $request->input('l_name'),
+                "email" => $request->input('email'),
+                "mobile" => $request->input('mobile'),
+                "inquire" => $request->input('message')
+            ]);
+        }
+        
         ContactUs::insert($insertdata);
-        return response()->json(["success"=>true]);
+
+        $brochure = ProductBrochure::select('brochure_name')->get();
+
+        $pdf = asset($brochure[0]->brochure_name);
+
+        return response()->json(["success"=>true, "pdf"=>$pdf]);
     }
 }

@@ -158,7 +158,7 @@
     <section class="container">
         <section class="achievements-section">
             <div class="my-heading">
-                <h2 class="h1">Key achievements</h2>
+                <h2 class="h1">Diversification for a strategic sustainability</h2>
                 <p>Your Trusted Partner In Medical Supplies.</p>
             </div>
             <section class="section5-area">

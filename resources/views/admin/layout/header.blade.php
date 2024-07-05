@@ -232,6 +232,9 @@
                         <a href="{{route('service.list')}}"><i class="fa fa-address-book"></i> Service Request</a>
                     </li>
                     <li>
+                        <a href="{{route('product.list')}}"><i class="fa fa-address-book"></i> Product Request</a>
+                    </li>
+                    <li>
                         <a href="{{route('career.list')}}"><i class="fa fa-address-book"></i> Applied Job</a>
                     </li>
 
@@ -254,14 +257,11 @@
                             <li>
                                 <a href="{{route('career.show')}}">Career Page</a>
                             </li>
-                            <!-- <li>
-                                <a href="#">Contact Page</a>
-                            </li> -->
+                            <li>
+                                <a href="{{route('brochure.show')}}">Product Brochure</a>
+                            </li>
                         </ul>
                     </li>
-                    <!-- <li>
-                        <a href="index-rtl.html"><i class="fa fa-fw fa-dashboard"></i> RTL Dashboard</a>
-                    </li> -->
                 </ul>
             </div>
             <!-- /.navbar-collapse -->

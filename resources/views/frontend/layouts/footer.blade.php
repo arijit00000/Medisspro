@@ -100,15 +100,29 @@
 
 <script>
     function openInquiry(id, headline){
+
         $('#inquiry-modal').modal('show');
-        $('#enquireHeading').val(headline);
+
+        if(headline){
+            $('#enquireHeading').val(headline);
+        }
+        else{
+            $('#enquireHeading').val('Product');   
+        }
 
         $('#homeinquirysubmit').on('click', function() {
 
             let URL = "{{route('query.submit')}}"
             let serviceForm = document.getElementById('service_inquiry')
             let service = new FormData(serviceForm)
-            service.append('serviceid',id)
+
+            if(id){
+                service.append('serviceid',id);
+            }
+            else{
+                service.append('type', "product")
+            }
+            
             service.append('_token',"{{ csrf_token() }}")
             
             formSubmit(URL, service)

@@ -4,7 +4,7 @@
 <!--top banner-->
 <section class="top-banner">
     <div class="top-banner-text">
-        <h1 class="h2">our Gallery</h1>
+        <h1 class="h2">our Event</h1>
         <!-- <p>The generated Lorem Ipsum is therefore always free from repetition.</p> -->
     </div>
     <div class="bg-shape mb-0">

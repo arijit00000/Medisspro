@@ -75,6 +75,8 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/service/request', [ServiceController::class, 'show'])->name('service.list');
     // Career Route
     Route::get('/admin/career/apply', [AdminCareerController::class, 'list'])->name('career.list');
+    // Product Route
+    Route::get('/admin/product/apply', [AdminProductController::class, 'list'])->name('product.list');
 
     // Admin Home Routes
     Route::get('/admin/settings/header-footer', [HeaderFooterController::class, 'homeheader'])->name('settings.homeheader');
@@ -89,6 +91,9 @@ Route::middleware('auth')->group(function () {
     Route::get('/admin/product', [AdminProductController::class, 'show'])->name('product.show');
     Route::post('/admin/product/submit', [AdminProductController::class, 'submit'])->name('product.submit');
     Route::post('/admin/product/delete/{id?}', [AdminProductController::class, 'delete'])->name('product.delete');
+    Route::get('/admin/product/brochure', [AdminProductController::class, 'brochure'])->name('brochure.show');
+    Route::post('/admin/product/brochure/submit', [AdminProductController::class, 'brochureSubmit'])->name('brochure.submit');
+    Route::post('/admin/product/brochure/delete/{id?}', [AdminProductController::class, 'brochureDelete'])->name('brochure.delete');
 
     // Admin Distributor Routes
     Route::get('/admin/distributor', [AdminDistributorController::class, 'show'])->name('distributor.show');

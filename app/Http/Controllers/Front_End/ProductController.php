@@ -17,7 +17,7 @@ class ProductController extends Controller
 
     public function detailsPage($id){
         $data = HeaderFooter::get();
-        $product = OurProduct::where('product_id',$id)->get();
+        $product = OurProduct::where('product_id',$id)->get(); 
         return view('frontend.products-details',compact('product','data'));
     }
 }

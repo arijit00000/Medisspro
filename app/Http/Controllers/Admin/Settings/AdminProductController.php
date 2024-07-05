@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Admin\Settings;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\OurProduct\OurProduct;
+use App\Models\OurProduct\ProductBrochure;
+use App\Models\Settings\ContactUs\ContactUs;
+
 
 class AdminProductController extends Controller
 {
@@ -84,5 +87,51 @@ class AdminProductController extends Controller
     protected function delete(Request $request, $id){
         OurProduct::where('product_id', $id)->delete();
         return response()->json(['success'=>true]);
+    }
+
+    protected function brochure(){
+        $brochure = ProductBrochure::get();
+        return view('admin.settings.product-brochure', compact('brochure'));
+    }
+
+    protected function brochureSubmit(Request $request){
+        $request->validate([
+            "brochure" => 'mimes:pdf'
+        ]);
+
+        if($request->hasFile('brochure')){
+           $brochure = $request->file('brochure');
+           $brochureName = '_pro'.time().$brochure->getClientOriginalExtension();
+           $brochurePath = $brochure->move('uploads',$brochureName);
+        }
+
+        $id = $request->input('brochureid');
+
+        if(empty($id)){
+            $insertdata = ([
+                "brochure_name" => $brochurePath
+            ]);
+
+            ProductBrochure::create($insertdata);
+        }
+        else{
+            $insertdata = ([
+                "brochure_name" => $brochurePath
+            ]);
+
+            ProductBrochure::update($insertdata);
+        }
+
+        return response()->json(['success'=>true]);
+    }
+
+    public function brochureDelete(Request $request, $id){
+        ProductBrochure::where('brochure_id', $id)->delete();
+        return response()->json(['success'=>true]);
+    }
+
+    public function list(){
+        $productList = ContactUs::where('form_type', 'product')->get();
+        return view('admin.product-list', compact('productList'));
     }
 }
